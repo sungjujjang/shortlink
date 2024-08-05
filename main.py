@@ -34,9 +34,9 @@ def home():
 
 @app.route('/<randomstring>')
 def urli(randomstring):
-    link = checkstring(randomstring)[0]
+    link = checkstring(randomstring)
     if link:
-        return redirect(link)
+        return redirect(link[0])
     else:
         return render_template('index.html')
 
